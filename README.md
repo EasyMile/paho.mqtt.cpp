@@ -46,6 +46,12 @@ The documentation requires doxygen and optionally graphviz:
 apt-get install doxygen graphviz
 ```
 
+The tests require cppunit:
+
+```
+apt-get install libcppunit-dev
+```
+
 ##### Build instructions
 
 Before compiling, determine the value of some variables in order to configure features, library locations, and other options:
@@ -56,6 +62,7 @@ PAHO_BUILD_SHARED | TRUE (Linux), FALSE (Win32) | Whether to build the shared li
 PAHO_BUILD_STATIC | FALSE (Linux), TRUE (Win32) | Whether to build the static library
 PAHO_BUILD_DOCUMENTATION | FALSE | Create and install the HTML based API documentation (requires Doxygen)
 PAHO_BUILD_SAMPLES | FALSE | Build sample programs
+PAHO_BUILD_TESTS | FALSE | Build tests (requires cppunit)
 PAHO_WITH_SSL | TRUE (Linux), FALSE (Win32) | Flag that defines whether to build ssl-enabled binaries too
 
 If you installed the C library on a non-standard path, you might want to pass it as value to the

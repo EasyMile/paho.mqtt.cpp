@@ -61,6 +61,7 @@ endif()
 
 option(PAHO_BUILD_SAMPLES "Build sample programs" FALSE)
 option(PAHO_BUILD_DOCUMENTATION "Create and install the API documentation (requires Doxygen)" FALSE)
+option(PAHO_BUILD_TESTS "Build tests" FALSE)
 
 ## --- C++11 build flags ---
 
@@ -76,6 +77,12 @@ add_subdirectory(src)
 
 if(PAHO_BUILD_DOCUMENTATION)
     add_subdirectory(doc)
+endif()
+
+if(PAHO_BUILD_TESTS)
+    include(CTest)
+    enable_testing()
+    add_subdirectory(test)
 endif()
 
 ## --- Packaging settings ---
